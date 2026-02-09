@@ -4,6 +4,32 @@ const titleEl = document.querySelector('.note-title');
 const textEl = document.querySelector('.note-textarea');
 const url = "http://localhost:3001/api/notes";
 
+const hide = (elem) => {
+  return  elem.style.display = "none";
+}
+
+const show = (elem) => {
+  return  elem.style.display = "inline";
+}
+
+const newNoteHandler = async () => {
+titleEl.value = "";
+textEl.value = "";
+hide(saveNoteBtn);
+}
+
+const saveBtnHandler  = () => {
+show(saveNoteBtn);
+}
+
+
+
+
+
+
+
+
+
 const getRequest = async () => {
   const result = await fetch(url, {
     method: 'GET',
@@ -55,8 +81,8 @@ const getRequest = async () => {
  }
 
 // Event listeners to listen when DOM elements are clicked 
-// saveNoteBtn.addEventListener('click', postNote)
-// newNoteBtn.addEventListener("click", newNoteHandler);
-// textEl.addEventListener("click", saveBtnHandler);
+saveNoteBtn.addEventListener('click', postNote)
+newNoteBtn.addEventListener("click", newNoteHandler);
+textEl.addEventListener("click", saveBtnHandler);
 
 renderNotes();
