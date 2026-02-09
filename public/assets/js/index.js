@@ -24,7 +24,24 @@ show(saveNoteBtn);
 
 
 
+const postNote = () => {
 
+ const result = {
+    noteTitle: titleEl.value,
+    noteText: textEl.value  
+  }  
+fetch(url, {
+  method: "POST",
+  headers: {
+// Telling the client the Data will be JSON
+    'content-type': 'application/json'
+  },
+  body: JSON.stringify(result)
+
+  
+  });
+renderNotes();
+}
 
 
 
