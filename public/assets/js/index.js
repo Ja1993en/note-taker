@@ -15,8 +15,20 @@ const getRequest = async () => {
   
 }
 
+ const renderNotes = async () => {
+  // Fetch request to get db elements
+      const result  = await getRequest();
+     console.log(result)
+     
+// forloop to iterate of db elements
+     for( let i = 0; i < result.length; i++ ){
+ 
+     }
+ }
 
 // Event listeners to listen when DOM elements are clicked 
-saveNoteBtn.addEventListener('click', postNote)
-newNoteBtn.addEventListener("click", newNoteHandler);
-textEl.addEventListener("click", saveBtnHandler);
+// saveNoteBtn.addEventListener('click', postNote)
+// newNoteBtn.addEventListener("click", newNoteHandler);
+// textEl.addEventListener("click", saveBtnHandler);
+
+renderNotes();
