@@ -15,7 +15,7 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true }));
 
-
+// Middleware for HTML and API routing 
  app.use('/api',api);
  app.use('/', html);
 
