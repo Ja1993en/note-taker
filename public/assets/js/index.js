@@ -2,7 +2,7 @@ const newNoteBtn = document.querySelector('.new-note');
 const saveNoteBtn = document.querySelector('.save-note')
 const titleEl = document.querySelector('.note-title');
 const textEl = document.querySelector('.note-textarea');
-const url = "http://localhost:3001/api/notes";
+const url = "/api/notes";
 
 // To dynamically hide elements 
 const hide = (elem) => {
