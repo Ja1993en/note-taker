@@ -58,6 +58,20 @@ const getRequest = async () => {
   
 }
 
+
+const deleteNote = async (id) => {
+    const res = await fetch(`${url}/${id}`, {
+      method: "DELETE",
+    });
+  
+    if (!res.ok) {
+      console.error("DELETE failed");
+      return;
+    }
+    await renderNotes();
+  }
+
+
  const renderNotes = async () => {
   // Fetch request to get db elements
       const result  = await getRequest(); 
@@ -83,6 +97,7 @@ const getRequest = async () => {
        deleteNote(result[i].id);
        titleEl.value = ""
        textEl.value = ""
+       console.log('asdf')
        
      });
      noteCard.addEventListener("click", () => {

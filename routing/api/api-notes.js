@@ -35,6 +35,31 @@ res.json(" Note data was received ")
 
 
 router.delete('/notes/:id', (req, res) => {
+  if( req.params ){
+    const {id} = req.params;
+    console.log(id)
+    for(let i = 0; i < noteDb.length; i++){
+        // console.log(noteDb[i].id)
+        if (id === noteDb[i].id){
+       console.log(id);
+       noteDb.splice(i, 1); 
 
+       noteStr = JSON.stringify(noteDb);
+
+       fs.writeFile('./db/db.json', noteStr, (err) => {
+        err? console.error(err)
+        : console.log(
+            `Note data has been deleted`
+        )
+    });
+        }
+    }
+}
+
+    res.json("we have received DELETE request");
 })
+
+
+
+
 module.exports = router
