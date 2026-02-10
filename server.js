@@ -6,7 +6,7 @@ const html = require('./routing/html/view-notes')
 
 // Instance of the express app (express object);
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Tells express to look in public for client files rendering 
 app.use(express.static('public'));
