@@ -4,26 +4,29 @@ const titleEl = document.querySelector('.note-title');
 const textEl = document.querySelector('.note-textarea');
 const url = "http://localhost:3001/api/notes";
 
+// To dynamically hide elements 
 const hide = (elem) => {
   return  elem.style.display = "none";
 }
 
+// To dynamically show elements 
 const show = (elem) => {
   return  elem.style.display = "inline";
 }
-
+// Hides save button when new note icon is pressed 
 const newNoteHandler = async () => {
 titleEl.value = "";
 textEl.value = "";
 hide(saveNoteBtn);
 }
 
+// Dynamically show save btn 
 const saveBtnHandler  = () => {
 show(saveNoteBtn);
 }
 
 
-
+// Fetch POST to add new notes to database
 const postNote = () => {
 
  const result = {
@@ -45,8 +48,7 @@ renderNotes();
 
 
 
-
-
+// Get Requst to gather all notes from db 
 const getRequest = async () => {
   const result = await fetch(url, {
     method: 'GET',
@@ -58,7 +60,7 @@ const getRequest = async () => {
   
 }
 
-
+//Fetch delete to delete notes from db
 const deleteNote = async (id) => {
     const res = await fetch(`${url}/${id}`, {
       method: "DELETE",
@@ -71,7 +73,7 @@ const deleteNote = async (id) => {
     await renderNotes();
   }
 
-
+// Displays all notes in db in html page
  const renderNotes = async () => {
   // Fetch request to get db elements
       const result  = await getRequest(); 
@@ -92,14 +94,15 @@ const deleteNote = async (id) => {
      text.textContent = result[i].noteTitle // Create text content
  
      icon.addEventListener("click", (e) => {
-      e.preventDefault();
+      // Stops the event from bubbling up to the parent element 
       e.stopPropagation();
        deleteNote(result[i].id);
-       titleEl.value = ""
-       textEl.value = ""
-       console.log('asdf')
+       titleEl.value = "";
+       textEl.value = "";
+       
        
      });
+    //  If note card is clicked it display the saved note 
      noteCard.addEventListener("click", () => {
      
       titleEl.value = result[i].noteTitle
