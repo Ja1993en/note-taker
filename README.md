@@ -4,7 +4,7 @@
 ## Table of Contents 
 * [Description](#description)
 * [Technology](#technology)
-* [Usage] (#usage)
+* [Usage](#usage)
 * [Link to Application](#link-to-application) 
 * [Link to github page](#link-to-github-page)
 * [Video Demo](#video-demo)
