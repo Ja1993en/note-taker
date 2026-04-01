@@ -7,13 +7,16 @@ const express = require("express");
 
 const router = express.Router();
 
+// Creates api for notes db
 router.get('/notes', (req,res) => {
  res.json(noteDb);
 }) 
 
+//Route to pose new notes to db 
 router.post('/notes', (req, res) => {
 const {noteTitle, noteText} = req.body 
 if(noteTitle && noteText){
+   //Creates an object for the new note  
     noteData = {
         noteTitle,
         noteText,
@@ -33,19 +36,22 @@ if(noteTitle && noteText){
 res.json(" Note data was received ")
 })
 
-
+// Route to delete notes from db
 router.delete('/notes/:id', (req, res) => {
   if( req.params ){
+
     const {id} = req.params;
-    console.log(id)
+
     for(let i = 0; i < noteDb.length; i++){
-        // console.log(noteDb[i].id)
+    
         if (id === noteDb[i].id){
+
        console.log(id);
        noteDb.splice(i, 1); 
 
        noteStr = JSON.stringify(noteDb);
 
+// Writes a new file with the selected note removed from db
        fs.writeFile('./db/db.json', noteStr, (err) => {
         err? console.error(err)
         : console.log(

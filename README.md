@@ -28,15 +28,13 @@ This project demonstrates how to build a simple CRUD application while practicin
 
 ## Usage
 
-- Click New Note to create a note
-- Enter a title and text
-- Click Save
-- Select a note to view
-- Click Delete to remove it
+- Run the application in the terminal using node index.js
+- Select an option from the menu
+- View departments, roles, or employees
+- Add a new department, role, or employee
+- Update an employee role
+- Exit the application when finished
 
-## Link to Application
-
-- [Live Application] (https://jalen-note-taker-65f9ba0e26f5.herokuapp.com/)
 
 ## Link to Github Page 
 [Link To My Final Page] (https://github.com/Ja1993en/note-taker)
