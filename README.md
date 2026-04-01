@@ -37,12 +37,10 @@ This project demonstrates how to build a simple CRUD application while practicin
 
 
 ## Link to Github Page 
- (https://github.com/Ja1993en/note-taker)
+ [Github](https://github.com/Ja1993en/note-taker).
 
 ## Video Demo
-- Example of Note Taker App
-
-- (https://www.awesomescreenshot.com/video/49429835?key=48d385ebce9508f7044e68b197602460)
+ [Video](https://www.awesomescreenshot.com/video/49429835?key=48d385ebce9508f7044e68b197602460).
 
 
 ## References
