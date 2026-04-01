@@ -20,11 +20,11 @@ Users can add new notes, view previously saved notes, and remove notes they no l
 This project demonstrates how to build a simple CRUD application while practicing front-end and back-end integration.
 
 ## Technology
-* [JavaScript] 
-* [Node.js]
-* [Express.js]
-* [Bootstrap]
-* [Fetch] [Api]
+* JavaScript 
+* Node.js
+* Express.js
+* Bootstrap
+* Fetch Api
 
 ## Usage
 
